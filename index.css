@@ -19,7 +19,7 @@ body {
 }
 
 .maxcell-button {
-    font-size: 18px;
+    font-size: 22px;
     color: #eee;
     width: 20vw;
     height: 10vh;
@@ -78,13 +78,13 @@ body {
 
 @media all and (max-width: 768px) {
     .maxcell-button {
-        font-size: 15px;
+        font-size: 19px;
     }
 }
 
 @media all and (max-width: 540px) {
     .maxcell-button {
-        margin-top: 10vh;
+        margin-top: 14px;
     }
 }
 

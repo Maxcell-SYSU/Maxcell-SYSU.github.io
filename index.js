@@ -3,21 +3,37 @@
  */
 
 document.getElementById("brand").onclick = function () {
-    $("html,body").animate({scrollTop:$("#page1").offset().top},500);
+    $("html,body").animate({scrollTop: $("#page1").offset().top}, 500);
 };
 
 document.getElementById("home").onclick = function () {
-    $("html,body").animate({scrollTop:$("#page1").offset().top},500);
+    $("html,body").animate({scrollTop: $("#page1").offset().top}, 500);
 };
 
 document.getElementById("about").onclick = function () {
-    $("html,body").animate({scrollTop:$("#page2").offset().top},500);
+    $("html,body").animate({scrollTop: $("#page2").offset().top}, 500);
 };
 
 document.getElementById("contact").onclick = function () {
-    $("html,body").animate({scrollTop:$("#page3").offset().top},500);
+    $("html,body").animate({scrollTop: $("#page3").offset().top}, 500);
 };
 
 document.getElementById("tobbs").onclick = function () {
     location.href = "https://omegago.pw";
 };
+
+$(document).ready(function () {
+    $('body').responsive({
+        extraSmall: function () {
+            $('.nav-controls').removeClass('pull-right');
+        },
+        small: function () {
+            $('.home').hide();
+        },
+        medium: function () {
+            $('.home').show();
+        },
+        large: function () {
+        }
+    });
+});
