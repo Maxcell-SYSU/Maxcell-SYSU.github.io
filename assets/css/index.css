@@ -1,7 +1,7 @@
 body {
-    background-color: #f8a841;
     font-family: "Quicksand", Arial;
     overflow-x: hidden;
+    align-items: center;
 }
 
 .maxcell-label {
@@ -9,6 +9,7 @@ body {
 }
 
 .maxcell-label-font {
+    max-width: 100%;
     font-size: 20vw;
     padding-top: 5vh;
     padding-bottom: 0;
@@ -16,6 +17,7 @@ body {
 }
 
 .maxcell-sub-label-font {
+    max-width: 100%;
     font-size: 3vw;
     margin-top: -8vh;
     padding-top: 0;
@@ -83,11 +85,13 @@ body {
 .page {
     position: relative;
     width: 100vw;
-    min-height: 100vh;
-    height: auto;
+    min-height: 320px;
+    height: 100vh;
+    max-height: 1080px;
 }
 
 .page1 {
+    background-color: #f8a841;
 }
 
 .page2 {
@@ -119,6 +123,21 @@ body {
     margin-right: 10vw;
     margin-left: 10vw;
     margin-top: 10vh;
+}
+
+@media all and (min-width: 1600px) {
+    .maxcell-label-font {
+        font-size: 16vw;
+    }
+
+    .maxcell-button {
+        font-size: 30px;
+    }
+
+    .maxcell-sub-label-font {
+        font-size: 4vw;
+        margin-top: -5vh;
+    }
 }
 
 @media all and (max-width: 1280px) {
@@ -153,4 +172,3 @@ body {
         margin-top: 5vh;
     }
 }
-

@@ -35,6 +35,14 @@ $(document).ready(function () {
             $('.home').show();
         },
         large: function () {
+            if(document.getElementById("page1").offsetWidth >= 1920) {
+                document.getElementById("viewport").content =
+                    "width=1920, height=" + document.getElementById("page1").offsetHeight;
+            }
+            if(document.getElementById("page1").offsetHeight >= 1080) {
+                document.getElementById("viewport").content =
+                    "height=1080, width=" + document.getElementById("page1").offsetWidth;
+            }
         }
     });
 });
