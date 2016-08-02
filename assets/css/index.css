@@ -4,9 +4,22 @@ body {
     overflow-x: hidden;
 }
 
+.maxcell-label {
+    text-align: center;
+}
+
 .maxcell-label-font {
     font-size: 20vw;
-    padding-top: 10vh;
+    padding-top: 5vh;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.maxcell-sub-label-font {
+    font-size: 3vw;
+    margin-top: -8vh;
+    padding-top: 0;
+    padding-bottom: 5vh;
 }
 
 .navbar-inverse {
@@ -86,15 +99,20 @@ body {
 }
 
 .page-header h1 {
-    font-size: 40px;
+    font-size: 35px;
 }
 
 .page-header {
-    border-bottom: 3px solid #fff;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.375);
+    margin-bottom: 30px;
+}
+
+#content-left {
+    color: #fff;
 }
 
 .page-content {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .page-row {
@@ -103,13 +121,30 @@ body {
     margin-top: 10vh;
 }
 
+@media all and (max-width: 1280px) {
+    .maxcell-sub-label-font {
+        font-size: 4vw;
+        margin-top: -4vh;
+    }
+}
+
 @media all and (max-width: 768px) {
     .maxcell-button {
         font-size: 19px;
     }
+
+    .maxcell-sub-label-font {
+        font-size: 5vw;
+        margin-top: -2vh;
+    }
 }
 
 @media all and (max-width: 540px) {
+    .maxcell-sub-label-font {
+        font-size: 6vw;
+        margin-top: 2vh;
+    }
+
     .maxcell-button {
         margin-top: 10vh;
     }
