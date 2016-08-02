@@ -15,7 +15,7 @@
  * ===========================================================
  */
 
-!function($){
+!function ($) {
 
     var defaults = {
         sectionContainer: "section",
@@ -29,8 +29,8 @@
     /*  Credit: Eike Send for the awesome swipe event */
     /*------------------------------------------------*/
 
-    $.fn.swipeEvents = function() {
-        return this.each(function() {
+    $.fn.swipeEvents = function () {
+        return this.each(function () {
 
             var startX,
                 startY,
@@ -77,7 +77,7 @@
     };
 
 
-    $.fn.onepage_scroll = function(options){
+    $.fn.onepage_scroll = function (options) {
         var settings = $.extend({}, defaults, options),
             el = $(this),
             sections = $(settings.sectionContainer)
@@ -88,7 +88,7 @@
             quietPeriod = 500,
             paginationList = "";
 
-        $.fn.transformPage = function(settings, pos) {
+        $.fn.transformPage = function (settings, pos) {
             $(this).css({
                 "-webkit-transform": "translate3d(0, " + pos + "%, 0)",
                 "-webkit-transition": "all " + settings.animationTime + "ms " + settings.easing,
@@ -101,25 +101,25 @@
             });
         }
 
-        $.fn.moveDown = function() {
+        $.fn.moveDown = function () {
             var el = $(this)
-            index = $(settings.sectionContainer +".active").data("index");
-            if(index < total) {
+            index = $(settings.sectionContainer + ".active").data("index");
+            if (index < total) {
                 current = $(settings.sectionContainer + "[data-index='" + index + "']");
                 next = $(settings.sectionContainer + "[data-index='" + (index + 1) + "']");
-                if(next) {
+                if (next) {
                     current.removeClass("active")
                     next.addClass("active");
-                    if(settings.pagination == true) {
+                    if (settings.pagination == true) {
                         $(".onepage-pagination li a" + "[data-index='" + index + "']").removeClass("active");
                         $(".onepage-pagination li a" + "[data-index='" + (index + 1) + "']").addClass("active");
                     }
                     $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
-                    $("body").addClass("viewing-page-"+next.data("index"))
+                    $("body").addClass("viewing-page-" + next.data("index"))
 
                     if (history.replaceState && settings.updateURL == true) {
-                        var href = window.location.href.substr(0,window.location.href.indexOf('#')) + "#" + (index + 1);
-                        history.pushState( {}, document.title, href );
+                        var href = window.location.href.substr(0, window.location.href.indexOf('#')) + "#" + (index + 1);
+                        history.pushState({}, document.title, href);
                     }
                 }
                 pos = (index * 100) * -1;
@@ -127,26 +127,26 @@
             }
         }
 
-        $.fn.moveUp = function() {
+        $.fn.moveUp = function () {
             var el = $(this)
-            index = $(settings.sectionContainer +".active").data("index");
-            if(index <= total && index > 1) {
+            index = $(settings.sectionContainer + ".active").data("index");
+            if (index <= total && index > 1) {
                 current = $(settings.sectionContainer + "[data-index='" + index + "']");
                 next = $(settings.sectionContainer + "[data-index='" + (index - 1) + "']");
 
-                if(next) {
+                if (next) {
                     current.removeClass("active")
                     next.addClass("active")
-                    if(settings.pagination == true) {
+                    if (settings.pagination == true) {
                         $(".onepage-pagination li a" + "[data-index='" + index + "']").removeClass("active");
                         $(".onepage-pagination li a" + "[data-index='" + (index - 1) + "']").addClass("active");
                     }
                     $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
-                    $("body").addClass("viewing-page-"+next.data("index"))
+                    $("body").addClass("viewing-page-" + next.data("index"))
 
                     if (history.replaceState && settings.updateURL == true) {
-                        var href = window.location.href.substr(0,window.location.href.indexOf('#')) + "#" + (index - 1);
-                        history.pushState( {}, document.title, href );
+                        var href = window.location.href.substr(0, window.location.href.indexOf('#')) + "#" + (index - 1);
+                        history.pushState({}, document.title, href);
                     }
                 }
                 pos = ((next.data("index") - 1) * 100) * -1;
@@ -158,7 +158,7 @@
             deltaOfInterest = delta;
             var timeNow = new Date().getTime();
             // Cancel scroll if currently animating or within quiet period
-            if(timeNow - lastAnimation < quietPeriod + settings.animationTime) {
+            if (timeNow - lastAnimation < quietPeriod + settings.animationTime) {
                 event.preventDefault();
                 return;
             }
@@ -173,116 +173,118 @@
 
         // Prepare everything before binding wheel scroll
 
-        el.addClass("onepage-wrapper").css("position","relative");
-        $.each( sections, function(i) {
+        el.addClass("onepage-wrapper").css("position", "relative");
+        $.each(sections, function (i) {
             $(this).css({
                 position: "absolute",
                 top: topPos + "%"
-            }).addClass("section").attr("data-index", i+1);
+            }).addClass("section").attr("data-index", i + 1);
             topPos = topPos + 100;
-            if(settings.pagination == true) {
-                paginationList += "<li><a data-index='"+(i+1)+"' href='#" + (i+1) + "'></a></li>"
+            if (settings.pagination == true) {
+                paginationList += "<li><a data-index='" + (i + 1) + "' href='#" + (i + 1) + "'></a></li>"
             }
         });
 
-        el.swipeEvents().bind("swipeDown",  function(){
+        el.swipeEvents().bind("swipeDown", function () {
             el.moveUp();
-        }).bind("swipeUp", function(){
+        }).bind("swipeUp", function () {
             el.moveDown();
         });
 
         // Create Pagination and Display Them
-        if(settings.pagination == true) {
+        if (settings.pagination == true) {
             $("<ul class='onepage-pagination'>" + paginationList + "</ul>").prependTo("body");
             posTop = (el.find(".onepage-pagination").height() / 2) * -1;
             el.find(".onepage-pagination").css("margin-top", posTop);
         }
 
-        if(window.location.hash != "" && window.location.hash != "#1") {
-            init_index =  window.location.hash.replace("#", "")
+        if (window.location.hash != "" && window.location.hash != "#1") {
+            init_index = window.location.hash.replace("#", "")
             $(settings.sectionContainer + "[data-index='" + init_index + "']").addClass("active")
-            $("body").addClass("viewing-page-"+ init_index)
-            if(settings.pagination == true) $(".onepage-pagination li a" + "[data-index='" + init_index + "']").addClass("active");
+            $("body").addClass("viewing-page-" + init_index)
+            if (settings.pagination == true) $(".onepage-pagination li a" + "[data-index='" + init_index + "']").addClass("active");
 
             next = $(settings.sectionContainer + "[data-index='" + (init_index) + "']");
-            if(next) {
+            if (next) {
                 next.addClass("active")
-                if(settings.pagination == true) $(".onepage-pagination li a" + "[data-index='" + (init_index) + "']").addClass("active");
+                if (settings.pagination == true) $(".onepage-pagination li a" + "[data-index='" + (init_index) + "']").addClass("active");
                 $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
-                $("body").addClass("viewing-page-"+next.data("index"))
+                $("body").addClass("viewing-page-" + next.data("index"))
                 if (history.replaceState && settings.updateURL == true) {
-                    var href = window.location.href.substr(0,window.location.href.indexOf('#')) + "#" + (init_index);
-                    history.pushState( {}, document.title, href );
+                    var href = window.location.href.substr(0, window.location.href.indexOf('#')) + "#" + (init_index);
+                    history.pushState({}, document.title, href);
                 }
             }
             pos = ((init_index - 1) * 100) * -1;
             el.transformPage(settings, pos);
 
-        }else{
+        } else {
             $(settings.sectionContainer + "[data-index='1']").addClass("active")
             $("body").addClass("viewing-page-1")
-            if(settings.pagination == true) $(".onepage-pagination li a" + "[data-index='1']").addClass("active");
+            if (settings.pagination == true) $(".onepage-pagination li a" + "[data-index='1']").addClass("active");
         }
-        if(settings.pagination == true)  {
-            $(".onepage-pagination li a").click(function (){
+        if (settings.pagination == true) {
+            $(".onepage-pagination li a").click(function () {
                 var page_index = $(this).data("index");
                 if (!$(this).hasClass("active")) {
                     current = $(settings.sectionContainer + ".active")
                     next = $(settings.sectionContainer + "[data-index='" + (page_index) + "']");
-                    if(next) {
+                    if (next) {
                         current.removeClass("active")
                         next.addClass("active")
                         $(".onepage-pagination li a" + ".active").removeClass("active");
                         $(".onepage-pagination li a" + "[data-index='" + (page_index) + "']").addClass("active");
                         $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
-                        $("body").addClass("viewing-page-"+next.data("index"))
+                        $("body").addClass("viewing-page-" + next.data("index"))
                     }
                     pos = ((page_index - 1) * 100) * -1;
                     el.transformPage(settings, pos);
                 }
                 if (settings.updateURL == false) return false;
             });
-            $(".nav-controls li a").click(function (){
+            $(".nav-controls li a").click(function () {
                 var page_index = $(this).data("index");
                 if (!$(this).hasClass("active")) {
                     current = $(settings.sectionContainer + ".active")
                     next = $(settings.sectionContainer + "[data-index='" + (page_index) + "']");
-                    if(next) {
+                    if (next) {
                         current.removeClass("active")
                         next.addClass("active")
                         $(".onepage-pagination li a" + ".active").removeClass("active");
                         $(".onepage-pagination li a" + "[data-index='" + (page_index) + "']").addClass("active");
                         $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
-                        $("body").addClass("viewing-page-"+next.data("index"))
+                        $("body").addClass("viewing-page-" + next.data("index"))
                     }
                     pos = ((page_index - 1) * 100) * -1;
                     el.transformPage(settings, pos);
                 }
                 if (settings.updateURL == false) return false;
             });
-            $(".navbar-brand").click(function (){
+            $(".navbar-brand").click(function () {
                 var page_index = $(this).data("index");
                 if (!$(this).hasClass("active")) {
                     current = $(settings.sectionContainer + ".active")
                     next = $(settings.sectionContainer + "[data-index='" + (page_index) + "']");
-                    if(next) {
+                    if (next) {
                         current.removeClass("active")
                         next.addClass("active")
                         $(".onepage-pagination li a" + ".active").removeClass("active");
                         $(".onepage-pagination li a" + "[data-index='" + (page_index) + "']").addClass("active");
                         $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
-                        $("body").addClass("viewing-page-"+next.data("index"))
+                        $("body").addClass("viewing-page-" + next.data("index"))
                     }
                     pos = ((page_index - 1) * 100) * -1;
                     el.transformPage(settings, pos);
                 }
                 if (settings.updateURL == false) return false;
+            });
+            $(".maxcell-button").click(function () {
+                location.href = "https://omegago.pw";
             });
         }
 
 
-
-        $(document).bind('mousewheel DOMMouseScroll', function(event) {
+        $(document).bind('mousewheel DOMMouseScroll', function (event) {
             event.preventDefault();
             var delta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
             init_scroll(event, delta);
@@ -293,3 +295,29 @@
 
 }(window.jQuery);
 
+document.getElementById("scrollButton").onclick = function () {
+    var nowScroll = document.body.scrollTop, flag = "up";
+    var funScroll = function () {
+        var top = document.body.scrollTop;
+        if (flag == "up") {
+            top -= 20;
+            if (top <= 0) {
+                top = 0;
+                flag = "down";
+            }
+        } else if (flag == "down") {
+            top += 20;
+            if (top >= nowScroll) {
+                top = nowScroll;
+                flag = "stop";
+            }
+        } else {
+            return;
+        }
+        document.body.scrollTop = top;
+        requestAnimationFrame(funScroll);
+    };
+    if (nowScroll) {
+        funScroll();
+    }
+};

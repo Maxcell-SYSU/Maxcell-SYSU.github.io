@@ -1,0 +1,90 @@
+body {
+    background-color: darkorange;
+    font-family: "Quicksand", Arial;
+    overflow-x: hidden;
+}
+
+.maxcell-label-font {
+    font-size: 20vw;
+    padding-top: 10vh;
+}
+
+.navbar-inverse {
+    font-weight: bold;
+}
+
+.maxcell-about {
+    font-size: 25px;
+    text-align: center;
+}
+
+.maxcell-button {
+    font-size: 18px;
+    color: #eee;
+    width: 20vw;
+    height: 10vh;
+    min-width: 180px;
+    position: relative;
+    text-align: center;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: #303030;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.button-contianer {
+    text-align: center;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #999;
+}
+
+.main {
+    position: absolute;
+    width: 100vw;
+    height: auto;
+}
+
+.page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.page1 {
+}
+
+.page2 {
+    background-color: #fff;
+}
+
+.page3 {
+    background-color: #000;
+}
+
+@media all and (max-width: 768px) {
+    .maxcell-button {
+        font-size: 15px;
+    }
+}
+
+@media all and (max-width: 540px) {
+    .maxcell-button {
+        margin-top: 10vh;
+    }
+}
+
