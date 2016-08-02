@@ -19,7 +19,8 @@ document.getElementById("contact").onclick = function () {
 };
 
 document.getElementById("tobbs").onclick = function () {
-    location.href = "https://omegago.pw";
+    alert("BBS 即将上线，敬请期待！请为我们的程序猿续一秒！");
+    /* location.href = "https://omegago.pw"; */
 };
 
 $(document).ready(function () {

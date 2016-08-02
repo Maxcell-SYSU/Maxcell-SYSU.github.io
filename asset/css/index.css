@@ -1,5 +1,5 @@
 body {
-    background-color: darkorange;
+    background-color: #f8a841;
     font-family: "Quicksand", Arial;
     overflow-x: hidden;
 }
@@ -10,7 +10,15 @@ body {
 }
 
 .navbar-inverse {
-    font-weight: bold;
+    font-weight: 500;
+}
+
+.navbar-default {
+    font-weight: 500;
+}
+
+.navbar-header {
+    font-weight: 600;
 }
 
 .maxcell-about {
@@ -56,13 +64,14 @@ body {
 .main {
     position: absolute;
     width: 100vw;
-    height: auto;
+    height: 0;
 }
 
 .page {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
 }
 
 .page1 {
@@ -73,7 +82,25 @@ body {
 }
 
 .page3 {
-    background-color: #000;
+    background-color: #9792d4;
+}
+
+.page-header h1 {
+    font-size: 40px;
+}
+
+.page-header {
+    border-bottom: 3px solid #fff;
+}
+
+.page-content {
+    font-size: 25px;
+}
+
+.page-row {
+    margin-right: 10vw;
+    margin-left: 10vw;
+    margin-top: 10vh;
 }
 
 @media all and (max-width: 768px) {
@@ -85,6 +112,10 @@ body {
 @media all and (max-width: 540px) {
     .maxcell-button {
         margin-top: 10vh;
+    }
+
+    .page-row {
+        margin-top: 5vh;
     }
 }
 
