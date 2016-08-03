@@ -1,4 +1,4 @@
-body {
+html body {
     font-family: "Quicksand", Arial;
     overflow-x: hidden;
     align-items: center;
@@ -86,7 +86,9 @@ body {
 .main {
     position: absolute;
     width: 100vw;
-    height: 0;
+    height: auto;
+    top: 0;
+    left: 0;
 }
 
 .page {
@@ -95,7 +97,6 @@ body {
     min-height: 100vh;
     height: auto;
     max-height: 1080px;
-    display: block;
 }
 
 .page1 {
@@ -128,10 +129,25 @@ body {
 }
 
 .page-row {
-    margin-right: 10vw;
-    margin-left: 10vw;
-    margin-top: 10vh;
+    padding-top: 10vh;
 }
+
+.footer {
+    background-color: #303030;
+    height: auto;
+    min-height: 60px;
+    text-align: left;
+}
+
+.footer-block {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-size: 0.875em;
+    color: rgba(255, 255, 255, 0.375);
+}
+
 
 @media all and (min-width: 1600px) {
     .maxcell-label-font {
@@ -167,6 +183,10 @@ body {
 }
 
 @media all and (max-width: 540px) {
+    .page-row {
+        padding-top: 5vh;
+    }
+
     .maxcell-sub-label-font {
         font-size: 6vw;
         margin-top: 2vh;
