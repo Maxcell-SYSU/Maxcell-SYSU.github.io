@@ -103,7 +103,8 @@ html body {
     background-color: #f8a841;
     background-image: url("//o5ngisf7c.qnssl.com/source/img/maxcell/page1-bg.jpg");
     background-position: center;
-
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .page2 {
