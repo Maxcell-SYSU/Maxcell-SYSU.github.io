@@ -23,67 +23,80 @@ document.getElementById("tobbs").onclick = function () {
     /* location.href = "https://omegago.pw"; */
 };
 
+var responsive_fix = function () {
+    if (document.getElementById("page1").offsetWidth <
+        document.getElementById("page1").offsetHeight) {
+        $('.page1').css({
+            "min-height": "320px",
+            "height": "auto",
+            "max-height": "1080px"
+        });
+        $('.page3').css({
+            "min-height": "320px",
+            "height": "auto",
+            "max-height": "1080px"
+        });
+        $('.maxcell-button').css({
+            "margin-bottom": "50px"
+        });
+        $('#content-right').css({
+            "margin-bottom": "50px"
+        });
+    }
+};
+
+var small_fix = function () {
+    if (document.getElementById("page1").offsetHeight <= 320 &&
+        document.getElementById("page1").offsetWidth <= 240) {
+        document.getElementById("viewport").content =
+            "width=240, height=320";
+    }
+    if (document.getElementById("page1").offsetWidth <= 240) {
+        document.getElementById("viewport").content =
+            "width=240, height=" + document.getElementById("page1").offsetHeight;
+    }
+    if (document.getElementById("page1").offsetHeight <= 320) {
+        document.getElementById("viewport").content =
+            "height=320, width=" + document.getElementById("page1").offsetWidth;
+    }
+};
+
+var large_fix = function () {
+    if (document.getElementById("page1").offsetWidth >= 1920 &&
+        document.getElementById("page1").offsetHeight >= 1080) {
+        document.getElementById("viewport").content = "height=1080, width=1920";
+    }
+    if (document.getElementById("page1").offsetWidth >= 1920) {
+        document.getElementById("viewport").content =
+            "width=1920, height=" + document.getElementById("page1").offsetHeight;
+    }
+    if (document.getElementById("page1").offsetHeight >= 1080) {
+        document.getElementById("viewport").content =
+            "height=1080, width=" + document.getElementById("page1").offsetWidth;
+    }
+};
+
 $(document).ready(function () {
     $('body').responsive({
         extraSmall: function () {
             $('.nav-controls').removeClass('pull-right');
-            if (document.getElementById("page1").offsetHeight <= 320 &&
-                document.getElementById("page1").offsetWidth <= 240) {
-                document.getElementById("viewport").content =
-                    "width=240, height=320";
-            }
-            if (document.getElementById("page1").offsetWidth <= 240) {
-                document.getElementById("viewport").content =
-                    "width=240, height=" + document.getElementById("page1").offsetHeight;
-            }
-            if (document.getElementById("page1").offsetHeight <= 320) {
-                document.getElementById("viewport").content =
-                    "height=320, width=" + document.getElementById("page1").offsetWidth;
-            }
+            small_fix();
+            responsive_fix();
         },
         small: function () {
             $('.home').hide();
-            if (document.getElementById("page1").offsetWidth <= 240) {
-                document.getElementById("viewport").content =
-                    "width=240, height=" + document.getElementById("page1").offsetHeight;
-            }
-            if (document.getElementById("page1").offsetHeight <= 320) {
-                document.getElementById("viewport").content =
-                    "height=320, width=" + document.getElementById("page1").offsetWidth;
-            }
+            small_fix();
+            responsive_fix();
         },
         medium: function () {
             $('.home').show();
-            if (document.getElementById("page1").offsetWidth <= 240) {
-                document.getElementById("viewport").content =
-                    "width=240, height=" + document.getElementById("page1").offsetHeight;
-            }
-            if (document.getElementById("page1").offsetHeight <= 320) {
-                document.getElementById("viewport").content =
-                    "height=320, width=" + document.getElementById("page1").offsetWidth;
-            }
+            small_fix();
+            responsive_fix();
         },
         large: function () {
-            if (document.getElementById("page1").offsetWidth <= 240) {
-                document.getElementById("viewport").content =
-                    "width=240, height=" + document.getElementById("page1").offsetHeight;
-            }
-            if (document.getElementById("page1").offsetHeight <= 320) {
-                document.getElementById("viewport").content =
-                    "height=320, width=" + document.getElementById("page1").offsetWidth;
-            }
-            if (document.getElementById("page1").offsetWidth >= 1920 &&
-                document.getElementById("page1").offsetHeight >= 1080) {
-                document.getElementById("viewport").content = "height=1080, width=1920";
-            }
-            if (document.getElementById("page1").offsetWidth >= 1920) {
-                document.getElementById("viewport").content =
-                    "width=1920, height=" + document.getElementById("page1").offsetHeight;
-            }
-            if (document.getElementById("page1").offsetHeight >= 1080) {
-                document.getElementById("viewport").content =
-                    "height=1080, width=" + document.getElementById("page1").offsetWidth;
-            }
+            small_fix();
+            large_fix();
+            responsive_fix();
         }
     });
 });
