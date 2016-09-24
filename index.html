@@ -4,94 +4,231 @@
     <meta charset="UTF-8">
     <meta id="viewport" name="viewport" content="width=device-width">
     <title>Maxcell</title>
-    <!--Replacing following link tags with local files is recommended. Google APIs excluded.-->
     <link rel="shortcut icon" href="assets/img/maxcell-icon.jpg" type="image/x-jpg">
     <link rel="stylesheet" href="//o5ngisf7c.qnssl.com/source/fontawesome/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="//o5ngisf7c.qnssl.com/source/bootstrap/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/index.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/new-index.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand">
-    <link href="//cdn.webfont.youziku.com/webfonts/nomal/89007/46865/57a037b7f629d80e60c369f8.css" rel="stylesheet"
-          type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" type="text/css"
+          href="//cdn.webfont.youziku.com/webfonts/nomal/89007/46865/57a037b7f629d80e60c369f8.css">
 </head>
-<body>
-<div class="navbar navbar-default navbar-fixed-top" role="navigation" style="box-shadow: 0 0 3px #505050;">
+
+<body id="top" data-spy="scroll" data-target=".navbar" data-offset="50">
+<!-- nav-bar -->
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a id="brand" class="navbar-brand" data-index="1">
-                <img src="assets/img/maxcell-white-no-content.svg"
-                     style="color: #f8a841; height: 30px; float: left; margin-top: -3px;">&nbsp;<big>Maxcell</big>
-            </a>
-            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse"
-                    data-target=".bs-navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-maxcell">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            <a class="navbar-brand">
+                <img src="assets/img/maxcell-white-no-content.svg">&nbsp;<big>Maxcell</big>
+            </a>
         </div>
-        <div class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-            <!-- <ul class="nav navbar-nav">
-                <li><a href="sth.">sth.</a></li>
-            </ul> -->
-            <ul class="nav navbar-nav pull-right nav-controls">
-                <li class="navbar-content"><a id="home" href="#"><i class="fa fa-university" aria-hidden="true"></i><big>&nbsp;Home</big></a></li>
-                <li class="navbar-content"><a id="about" href="#"><i class="fa fa-users" aria-hidden="true"></i><big>&nbsp;About</big></a></li>
-                <li class="navbar-content"><a id="contact" href="#"><i class="fa fa-weixin" aria-hidden="true"></i><big>&nbsp;Contact</big></a></li>
+        <div class="collapse navbar-collapse" id="nav-maxcell">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#home">主页</a></li>
+                <li><a href="#about">介绍</a></li>
+                <li><a href="#show">作品</a></li>
+                <li><a href="#contact">联系</a></li>
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</nav>
+
+<!-- home screen -->
+<div id="home" class="container-fluid">
+    <div id="home-bg" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+            <img src="//o5ngisf7c.qnssl.com/source/img/maxcell/page1-bg.jpg">
+            <div class="carousel-caption">
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8 text-center">
+                        <h1 id="home-font">Maxcell</h1>
+                        <h3 class="css4ef02eb4015baf">心之所致&emsp;无所不能</h3>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<div class="main">
-    <div id="page1" class="page page1">
-        <div class="container" style="padding-top: 50px;">
-            <div class="maxcell-label">
-                <div class="maxcell-label-font">Maxcell</div>
-                <div class="maxcell-sub-label-font css4ef02eb4015baf">— 心之所致 无所不能 —</div>
-            </div>
-            <div class="button-contianer">
-                <button id="tobbs" class="maxcell-button">
-                    <div class="button-font">BBS&emsp;<i class="fa fa-rss" aria-hidden="true"></i></div>
-                </button>
-            </div>
-        </div>
-    </div> <!-- Page1 -->
-    <div id="page2" class="page page2">
-        <div class="container" style="padding-top: 50px;">
-            <div class="css4ef02eb4015baf maxcell-about" style="padding-top: 20vh;">
-                我们希望你所看到的<p style="font-family: Quicksand, Arial;">Maxcell</p>
-            </div>
-        </div>
-    </div> <!-- Page2 -->
-    <div id="page3" class="page page3">
-        <div class="container">
-            <div class="contianer" style="padding-top: 50px;">
-                <div class="page-row" id="content">
-                    <div class="col-sm-6" id="content-left" style="margin-bottom: 5vh">
-                        <div class="page-header">
-                            <h1 class="css4ef02eb4015baf">微信公众号</h1>
-                        </div>
-                        <div class="page-content css4ef02eb4015baf">扫描二维码关注微信公众号</div>
-                    </div>
-                    <div class="col-sm-6 text-right" id="content-right" style="padding-bottom: 5vh">
-                        <img src="//o5ngisf7c.qnssl.com/source/img/qrcode_for_gh_98ac79ae734a_430.jpg"
-                             style="max-width: 100%; max-height: 100%">
-                    </div>
-                </div> <!-- end of row -->
+
+<!-- about-maxcell -->
+<div id="about" class="container container-inner text-center">
+    <h3>ABOUT MAXCELL</h3>
+    <div class="container-fluid dummy-hr"></div>
+    <p>中山大学Maxcell资源在线协会是一个以www.maxcell.com.cn为平台，</p>
+    <p>致力于增强中大校园互动、整合校内资源、追求资源最优化利用的学生社团。</p>
+    <p>享有中珠四大社团美誉并于2011年荣获新浪微博“全国百佳社团”称号。</p>
+    <p>协会集中了大批电脑软硬件、网页制作、摄影、微电影制作、平面设计等多方面的技术爱好者。</p>
+    <br>
+    <div class="row">
+        <div class="col-sm-4">
+            <p class="text-center"><strong>外联部</strong></p><br>
+            <a href="#dpt1" data-toggle="collapse">
+                <img src="//o5ngisf7c.qnssl.com/source/img/maxcell/240370-1305210U64652.jpg" class="img-rounded department"
+                     alt="部门一">
+            </a>
+            <div id="dpt1" class="collapse">
+                <p>对外寻求赞助商筹集活动所需经费</p>
+                <p>以及其他相关公关活动</p>
+                <p>包括与校内其他协会的合作交流</p>
+                <p>担负协会的活动策划主力，新项目推广等工作</p>
             </div>
         </div>
-    </div> <!-- Page3 -->
-    <div class="footer">
-        <div class="container">
-            <div class="footer-block col-sm-6">
-                Copyright &copy;2016 Maxcell. All rights reserved.
+        <div class="col-sm-4">
+            <p class="text-center"><strong>资讯部</strong></p><br>
+            <a href="#dpt2" data-toggle="collapse">
+                <img src="//o5ngisf7c.qnssl.com/source/img/maxcell/15254803738da9779e3ef1e3b251f8198718e31f.jpg" class="img-rounded department"
+                     alt="部门二">
+            </a>
+            <div id="dpt2" class="collapse">
+                <p>收集校内和各协会相关信息</p>
+                <p>负责校园传媒</p>
+                <p>利用优秀的摄影技术为校园内各项活动、新鲜事拍摄采风，同时进行自身的艺术创作</p>
+                <p>担负起协会各项活动现场采风、留影的任务</p>
             </div>
         </div>
-    </div> <!-- footer -->
-</div> <!-- main view -->
-<!--Replacing the sources with local files is recommended.-->
-<script type="text/javascript" src="//o5ngisf7c.qnssl.com/source/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="//o5ngisf7c.qnssl.com/source/jquery/jquery.bs.js"></script>
-<script type="text/javascript" src="assets/js/index.js"></script>
-<script type="text/javascript" src="//o5ngisf7c.qnssl.com/source/bootstrap/js/bootstrap.min.js"></script>
+        <div class="col-sm-4">
+            <p class="text-center"><strong>技术支持部</strong></p><br>
+            <a href="#dpt3" data-toggle="collapse">
+                <img src="//o5ngisf7c.qnssl.com/source/img/maxcell/ds.jpg" class="img-rounded department"
+                     alt="部门三">
+            </a>
+            <div id="dpt3" class="collapse">
+                <p>Maxcell IT技术力量的核心体现</p>
+                <p>保证服务器硬件的正常工作</p>
+                <p>为各部门提供电脑技术支持以及指导</p>
+                <p>为中珠学生提供免费电脑维修，维护服务</p>
+                <p>配合协会需要进行软件开发方面的研究</p>
+            </div>
+        </div>
+    </div>
+    <div id="about-hr" class="container-fluid dummy-hr"></div>
+    <div class="row">
+        <div class="col-sm-6">
+            <p class="text-center"><strong>开发部</strong></p><br>
+            <a href="#dpt4" data-toggle="collapse">
+                <img src="//o5ngisf7c.qnssl.com/source/img/maxcell/3ec5071fa516438895f1fd3b9618181d.jpg" class="img-rounded department"
+                     alt="部门四">
+            </a>
+            <div id="dpt4" class="collapse">
+                <p>负责Maxcell网页开发和平面设计</p>
+                <p>负责协会网站平台Maxcell Online的网站开发以及优化</p>
+                <p>为协会各项活动以及项目进行高水准的宣传品，平面设计作品创作</p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <p class="text-center"><strong>Maxcell DV Studio</strong></p><br>
+            <a href="#dpt5" data-toggle="collapse">
+                <img src="//o5ngisf7c.qnssl.com/source/img/maxcell/790484535215187765.jpg" class="img-rounded department"
+                     alt="部门五">
+            </a>
+            <div id="dpt5" class="collapse">
+                <p>Maxcell旗下的原创视频工作室</p>
+                <p>进行高水准原创短片以及年度大学生原创电影的制作</p>
+                <p>承担协会宣传视频，活动宣传视频的制作任务</p>
+                <p>同时负责每年的军训回忆录的制作</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- works-show -->
+<div id="show" class="container-fluid">
+    <div id="show-carousel" class="carousel slide" data-ride="carousel">
+
+        <ol class="carousel-indicators">
+            <li data-target="#show-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#show-carousel" data-slide-to="1"></li>
+            <li data-target="#show-carousel" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="//o5ngisf7c.qnssl.com/source/img/maxcell/236464540462805513.jpg" alt="Traing">
+                <div class="carousel-caption">
+                    <h3>军训实拍</h3>
+                </div>
+            </div>
+            <div class="item">
+                <img src="//o5ngisf7c.qnssl.com/source/img/maxcell/814964594079263997.jpg" alt="Fly">
+                <div class="carousel-caption">
+                    <h3>航拍试飞</h3>
+                </div>
+            </div>
+            <div class="item">
+                <img src="//o5ngisf7c.qnssl.com/source/img/maxcell/221343963148297396.jpg" alt="Stu">
+                <div class="carousel-caption">
+                    <h3>留学生摆拍</h3>
+                </div>
+            </div>
+        </div>
+
+        <a class="left carousel-control" href="#show-carousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#show-carousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+<!-- contact -->
+<div id="contact" class="container container-inner text-center">
+    <h3 class="text-center">CONTACT</h3>
+    <div class="container-fluid dummy-hr"></div>
+    <div class="row">
+        <div class="col-md-8">
+            <img src="//o5ngisf7c.qnssl.com/source/img/qrcode_for_gh_98ac79ae734a_430.jpg"
+                 style="max-width: 100%; max-height: 100%">
+        </div>
+        <div class="col-md-4 text-left">
+            <h3>微信公众号二维码</h3>
+            <p>街拍摄影，校园采访，微电影</p>
+            <p>电脑技术，创意开发</p>
+            <p>从令人惊叹的技术到业界称赞的设计，我们所做的一切都闪耀着你们的灵感与创新</p>
+            <p>加入我们，和我们一道让中珠变得更加美好</p>
+        </div>
+    </div>
+</div>
 </body>
+
+<footer class="container-fluid text-center">
+    <div class="container container-inner">
+        <a class="up-arrow" href="#top" data-toggle="tooltip" title="TO TOP">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+        <div class="container-fluid dummy-hr"></div>
+        <p>Copyright &copy;2016 Maxcell. All rights reserved.</p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="//o5ngisf7c.qnssl.com/source/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="//o5ngisf7c.qnssl.com/source/bootstrap/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+        $(".navbar a, footer a[href='#top']").on('click', function (event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function () {
+                    window.location.hash = hash;
+                });
+            }
+        });
+    })
+</script>
+
 </html>
