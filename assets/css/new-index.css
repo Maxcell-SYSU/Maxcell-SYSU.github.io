@@ -1,3 +1,11 @@
+@font-face {
+    font-family: Conv_Bauhausl;
+    src: url(../fonts/Bauhausl.eot);
+    src: local('â˜º'),url(../fonts/Bauhausl.woff) format('woff'),url(../fonts/Bauhausl.ttf) format('truetype'),url(../fonts/Bauhausl.svg) format('svg');
+    font-weight: 400;
+    font-style: normal
+}
+
 body {
     font: 400 15px/1.8 Lato, sans-serif;
 }
