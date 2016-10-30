@@ -153,6 +153,11 @@ html body {
     color: rgba(255, 255, 255, 0.375);
 }
 
+.signup-btn {
+    position: absolute;
+    top: 10px;
+}
+
 
 @media all and (min-width: 1600px) {
     .maxcell-label-font {
