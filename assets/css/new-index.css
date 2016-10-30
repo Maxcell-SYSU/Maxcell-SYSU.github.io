@@ -130,6 +130,7 @@ footer a {
     margin-top: -22vw;
     font-size: 5vw;
     border: hidden;
+    z-index: 9999;
 }
 
 .btn-warning .badge,
